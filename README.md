@@ -21,3 +21,5 @@ Modern logistics companies rely heavily on data to monitor delivery efficiency, 
 - Power BI Dashboard Development
 - QC Analytics & Root-Cause Analysis
 - Data Storytelling & Business Insight Extraction
+
+[![Ask Me Anything !](https://img.shields.io/badge/Ask%20me-anything-1abc9c.svg)](https://GitHub.com/Naereen/ama)
