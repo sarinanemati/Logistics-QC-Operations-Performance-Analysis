@@ -1,22 +1,6 @@
 # Logistics-QC-Operations-Performance-Analysis
 
-## 📋 Table of Contents
-
-1. [Project Overview](#-project-overview)
-2. [Business Problem](#-business-problem)
-3. [Dataset Summary](#-dataset-summary)
-4. [Methodology](#-methodology)
-5. [Model Performance](#-model-performance)
-6. [Top Predictive Features](#-top-predictive-features)
-7. [Business Impact & Recommendations](#-business-impact--recommendations)
-8. [Technical Stack](#-technical-stack)
-9. [Project Structure](#-project-structure)
-10. [Getting Started](#-getting-started)
-11. [Key Learnings](#-key-learnings)
-12. [Future Improvements](#-future-improvements)
-13. [Conclusion](#-conclusion)
-
-## 📋 Project Overview
+## Project Overview
 
 This project develops a machine learning model to predict whether a delivery order will be delayed based on various operational, environmental, and courier-related features. The model is built using a **Random Forest Classifier** and achieves strong predictive performance on real-world delivery data from FastMove, a logistics company.
 
@@ -28,7 +12,7 @@ This project develops a machine learning model to predict whether a delivery ord
 - Create a production-ready solution for real-time predictions
 
 
-## 🎯 Business Problem
+## Business Problem
 
 In the logistics industry, **delivery delays** lead to:
 Customer dissatisfaction and churn
@@ -43,7 +27,7 @@ Potential financial penalties
 - Optimizing route planning
 - Allocating additional resources to high-risk areas
 
-## 📊 Dataset Summary
+## Dataset Summary
 
 ### Overview
 
@@ -81,7 +65,7 @@ Potential financial penalties
 
 ``` On-time:  ~50% Delayed:  ~50% ``` *The dataset is well-balanced, making it suitable for classification without needing resampling techniques.*
 
-## 🔧 Methodology
+## Methodology
 
 ### 1. Data Preprocessing
 
@@ -207,14 +191,14 @@ accuracy = accuracy_score(y_test, y_pred) cm = confusion_matrix(y_test, y_pred) 
 ``` Accuracy: ~85-88% (depending on data split) ``` *This indicates that the model correctly predicts ~87% of all deliveries, making it a reliable tool for delay prediction.*
 
 ### Confusion Matrix
-
+```
 ```
     Predicted
-    No Delay   Delay
+                 No Delay    Delay
 Actual No Delay     [TN]     [FP]
 Actual Delay        [FN]     [TP]
-```
 
+```
 **Interpretation:**
 - **True Negatives (TN):** Correctly predicted on-time deliveries
 - **False Positives (FP):** Predicted delay but actually on-time (false alarm)
@@ -261,10 +245,6 @@ Based on feature importance analysis from the Random Forest model:
 | 11 | **Root Cause** | ~0.02 | 2% of predictive power |
 | 12 | **Attempt Count** | ~0.01 | 1% of predictive power |
 | 13 | **Day of Week** | <0.01 | <1% of predictive power |
-
-### Feature Importance Visualization
-
-``` Traffic Level     ██████████████████░░ 18% Weather           ██████████████░░░░░░ 14% Distance          ████████████░░░░░░░░ 12% Est. Duration     ██████████░░░░░░░░░░ 10% Zone              ████████░░░░░░░░░░░░  8% Courier Exp.      ███████░░░░░░░░░░░░░  7% Courier Rating    ██████░░░░░░░░░░░░░░  6% Items Count       █████░░░░░░░░░░░░░░░  5% Hour              ████░░░░░░░░░░░░░░░░  4% Vehicle Type      ███░░░░░░░░░░░░░░░░░  3% Root Cause        ██░░░░░░░░░░░░░░░░░░  2% Attempt Count     █░░░░░░░░░░░░░░░░░░░  1% Day of Week       ░░░░░░░░░░░░░░░░░░░░ <1% ```
 
 ### Key Insights from Feature Importance
 
@@ -364,11 +344,6 @@ Based on feature importance analysis from the Random Forest model:
 
 ```python pandas>=1.3.0 numpy>=1.21.0 scikit-learn>=0.24.0 matplotlib>=3.4.0  # For visualization seaborn>=0.11.0    # For visualization ```
 
-## Project Structure
-
-``` fastmove-delay-prediction/ │ ├── data/ │   └── fastmove_cleaned.csv          # Dataset │ ├── notebooks/ │   └── model_development.ipynb       # Jupyter notebook for **EDA** & modeling │ ├── src/ │   ├── model.py                      # Main model script │   ├── preprocess.py                 # Data preprocessing functions │   └── utils.py                      # Utility functions │ ├── outputs/ │   ├── feature_importance.csv        # Feature importance results │   ├── model.pkl                     # Saved model (pickle) │   └── predictions.csv               # Predictions on test set │ ├── tests/ │   └── test_model.py                 # Unit tests │ ├── **README**.md                         # Project documentation ├── requirements.txt                  # Python dependencies ├── **LICENSE**                           # **MIT** License └── .gitignore                        # Git ignore file ```
-
-
 ## Getting Started
 
 ### Prerequisites
@@ -417,7 +392,7 @@ rf = RandomForestClassifier(n_estimators=**220**, random_state=42) rf.fit(X_trai
 # Evaluate
 
 y_pred = rf.predict(X_test) print(*Accuracy:*, accuracy_score(y_test, y_pred)) print(*\nClassification Report:\n*, classification_report(y_test, y_pred)) ```
-
+```
 ### Expected Outputs
 
 1. **Model Accuracy Score** (e.g., 0.86)
@@ -526,7 +501,7 @@ y_pred = rf.predict(X_test) print(*Accuracy:*, accuracy_score(y_test, y_pred)) p
     - Predict delay probability and delay duration
     - Suggest interventions
 
-## 📝 Conclusion
+## Conclusion
 
 This project successfully demonstrates a **production-ready** machine learning solution for predicting delivery delays in logistics operations. The Random Forest model achieves strong performance with **~87% accuracy** and provides **actionable insights** through feature importance analysis.
 
