@@ -96,10 +96,6 @@ for col in cat_cols:
     features.append(col)
 ```
 
-**Example Encoding:**
-- `weather`: Clear→0, Rain→1, Snow→2, Windy→3, Hot→4
-- `traffic_level`: Low→0, Medium→1, High→2, Severe→3
-- `vehicle_type`: Van→0, Motorbike→1, Bike→2, Car→3
 
 #### D. Final Feature Set (13 Features)
 
