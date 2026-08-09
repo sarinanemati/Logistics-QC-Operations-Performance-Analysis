@@ -448,8 +448,6 @@ y_pred = rf.predict(X_test) print(*Accuracy:*, accuracy_score(y_test, y_pred)) p
 
 This project successfully demonstrates a **production-ready** machine learning solution for predicting delivery delays in logistics operations. The Random Forest model achieves strong performance with **~87% accuracy** and provides **actionable insights** through feature importance analysis.
 
-
-
 <h2 align="center">
 :dizzy: Ask me anything! :sparkles:<br><br>
 
